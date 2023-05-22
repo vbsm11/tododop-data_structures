@@ -175,11 +175,7 @@ function App() {
   }
 
   function changeFilter(value: FilterValuesType, todolistId: number) {
-    // let todolist = todolists.find(tl => tl.id === todolistId);
-    // if (todolist) {
-    //   todolist.filter = value;
-    //   setTodolists([...todolists])
-    // }
+    setTodo(todo.map((tl, index) => index === todolistId? {...tl, filter: value}: tl))
   }
 
   function removeTodolist(id: number) {
