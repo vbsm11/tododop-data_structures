@@ -166,13 +166,8 @@ function App() {
   }
 
   function addTask(title: string, todolistId: number) {
-    // let task = {id: v1(), title: title, isDone: false};
-    // //достанем нужный массив по todolistId:
-    // let todolistTasks = tasks[todolistId];
-    // // перезапишем в этом объекте массив для нужного тудулиста копией, добавив в начало новую таску:
-    // tasks[todolistId] = [task, ...todolistTasks];
-    // // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-    // setTasks({...tasks});
+    let task = {taskId: v1(), title: title, isDone: false}
+    setTodo(todo.map((tl, index) => index === todolistId? {...tl, tasks: [task, ...tl.tasks]}: tl))
   }
 
   function changeStatus(id: string, isDone: boolean, todolistId: number) {
